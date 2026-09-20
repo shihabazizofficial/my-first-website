@@ -1,3 +1,7 @@
  function showSurprise() {
-    alert("🎉 Happy Birthday Jesmin! 🎂❤️");
+    document.getElementById("surprise").style.display = "flex";
+}
+
+function closeSurprise() {
+    document.getElementById("surprise").style.display = "none";
 }
