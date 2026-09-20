@@ -6,9 +6,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #ffe6f0;
-    color: #333;
+    background: linear-gradient(135deg, #ffe4ec, #ffd1df);
+    color: #5b2333;
+    overflow-x: hidden;
 }
+
+/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -22,67 +25,297 @@ body {
     text-align: center;
 
     padding: 30px;
+
+    position: relative;
+    overflow: hidden;
 }
+
+/* Small heading */
+
+.hero > p:first-child {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    animation: fadeDown 1s ease;
+}
+
+/* Main heading */
 
 .hero h1 {
-    font-size: 60px;
-    color: #ff4f81;
+    font-size: 70px;
 
-    margin: 20px 0;
+    color: #ed4f7a;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 5px 15px rgba(237, 79, 122, 0.25);
+
+    animation: fadeUp 1s ease;
 }
+
+/* Name */
 
 .hero h2 {
-    font-size: 32px;
-    color: #7a2c48;
+    font-size: 38px;
+
+    color: #762d48;
+
+    margin-bottom: 15px;
+
+    animation: fadeUp 1.3s ease;
 }
+
+/* Description */
 
 .hero p {
     font-size: 20px;
-    margin: 10px;
+
+    line-height: 1.6;
+
+    animation: fadeUp 1.5s ease;
 }
 
-button {
-    margin-top: 30px;
+/* BUTTON */
 
-    padding: 15px 30px;
+button {
+    margin-top: 35px;
+
+    padding: 16px 35px;
 
     border: none;
-    border-radius: 30px;
+    border-radius: 50px;
 
-    background: #ff4f81;
+    background: linear-gradient(
+        135deg,
+        #ff4f81,
+        #e83e6f
+    );
+
     color: white;
 
     font-size: 18px;
+    font-weight: bold;
 
     cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(232, 62, 111, 0.3);
+
+    transition: all 0.3s ease;
+
+    animation: fadeUp 1.8s ease;
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: translateY(-4px) scale(1.05);
+
+    box-shadow:
+        0 15px 30px rgba(232, 62, 111, 0.4);
 }
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* MESSAGE SECTION */
 
 .message {
     min-height: 60vh;
 
-    padding: 80px 20px;
+    padding: 100px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(10px);
 }
 
 .message h2 {
-    font-size: 40px;
-    color: #ff4f81;
+    font-size: 42px;
+
+    color: #ed4f7a;
 
     margin-bottom: 30px;
 }
 
 .message p {
-    max-width: 600px;
-
-    margin: auto;
+    max-width: 650px;
 
     font-size: 20px;
-    line-height: 1.8;
+
+    line-height: 1.9;
+
+    color: #6b3044;
+}
+
+/* BALLOONS */
+
+.balloon {
+    position: absolute;
+
+    font-size: 50px;
+
+    animation: float 6s ease-in-out infinite;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+.balloon1 {
+    left: 8%;
+    top: 15%;
+
+    animation-delay: 0s;
+}
+
+.balloon2 {
+    right: 8%;
+    top: 20%;
+
+    animation-delay: 1.5s;
+}
+
+.balloon3 {
+    left: 15%;
+    bottom: 12%;
+
+    animation-delay: 3s;
+}
+
+.balloon4 {
+    right: 15%;
+    bottom: 10%;
+
+    animation-delay: 4s;
+}
+
+/* HEARTS */
+
+.heart {
+    position: absolute;
+
+    font-size: 25px;
+
+    animation: heartFloat 5s linear infinite;
+
+    opacity: 0.7;
+
+    pointer-events: none;
+}
+
+.heart1 {
+    left: 30%;
+    bottom: -30px;
+}
+
+.heart2 {
+    left: 60%;
+    bottom: -30px;
+
+    animation-delay: 2s;
+}
+
+.heart3 {
+    left: 80%;
+    bottom: -30px;
+
+    animation-delay: 4s;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+}
+
+@keyframes heartFloat {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .message h2 {
+        font-size: 32px;
+    }
+
+    .message p {
+        font-size: 17px;
+    }
+
+    .balloon {
+        font-size: 35px;
+    }
 }
