@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffe6f0;
+    color: #333;
+}
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: #ff4f81;
+
+    margin: 20px 0;
+}
+
+.hero h2 {
+    font-size: 32px;
+    color: #7a2c48;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 10px;
+}
+
+button {
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #ff4f81;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.message {
+    min-height: 60vh;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.message h2 {
+    font-size: 40px;
+    color: #ff4f81;
+
+    margin-bottom: 30px;
+}
+
+.message p {
+    max-width: 600px;
+
+    margin: auto;
+
+    font-size: 20px;
+    line-height: 1.8;
+}
